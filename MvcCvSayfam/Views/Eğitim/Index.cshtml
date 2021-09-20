@@ -1,0 +1,47 @@
+﻿@using MvcCvSayfam.Models.Entity
+@model List<Eğitimlerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Eğitim Hayatım</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Alt Başlık 1</th>
+        <th>Alt Başlık 2</th>
+        <th>Tarih</th>
+        <th>GNO</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.ID</td>
+            <td>@a.Baslik</td>
+            <td>@a.Altbaslık1</td>
+            <td>@a.Altbaslık2</td>
+            <td>@a.Tarih</td>
+            <td>@a.GNO</td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="/Eğitim/EğitimSil/@a.ID">
+                    <i class="fas fa-trash"></i>
+                    Sil
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Eğitim/EğitimDuzenle/@a.ID">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Düzenle
+                </a>
+            </td>
+
+        </tr>
+    }
+</table>
+<a href="/Eğitim/EğitimEkle/" class="btn btn-primary">Yeni Eğitim Bilgisi Ekle</a>
+

@@ -1,0 +1,14 @@
+﻿@using MvcCvSayfam.Models.Entity
+@model List<Sertifikalarım>
+<div class="resume-section-content">
+    <h2 class="mb-5">ödüller & Sertifikalar</h2>
+    <ul class="fa-ul mb-0">
+        @foreach (var a in Model)
+        {
+            <li>
+                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                @a.Aciklama
+            </li>
+        }
+    </ul>
+</div>
